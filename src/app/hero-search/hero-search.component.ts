@@ -32,7 +32,7 @@ export class HeroSearchComponent implements OnInit {
       .switchMap(term => term   // switch to new observable each time
         // return the http search observable
         ? this.heroSearchService.search(term)
-        // or the observable of empty heroes if no search term
+        // or the observable of empty products if no search term
         : Observable.of<Product[]>([]))
       .catch(error => {
         // TODO: real error handling

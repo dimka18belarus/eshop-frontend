@@ -8,13 +8,13 @@ import {ProductService} from "../shared/product.service";
   styleUrls: ['dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Product[] = [];
+  products: Product[] = [];
 
-  constructor(private heroService: ProductService) {
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
-    this.heroService.getProducts()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+    this.productService.getProducts()
+      .then(products => this.products = products.slice(1, 5));
   }
 }
