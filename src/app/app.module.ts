@@ -9,7 +9,7 @@ import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 import {InMemoryDataService} from "./shared/in-memory-data.service";
 import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
-import {HeroesComponent} from "./heroes/products.component";
+import {ProductsComponent} from "./products/products.component";
 import {ProductDetailComponent} from "./product-detail/product-detail.component";
 import {ProductService} from "./shared/product.service";
 import {ProductSearchComponent} from "./product-search/product-search.component";
@@ -26,9 +26,8 @@ import {ProductSearchComponent} from "./product-search/product-search.component"
     AppComponent,
     DashboardComponent,
     ProductDetailComponent,
-    HeroesComponent,
+    ProductsComponent,
     ProductSearchComponent,
-    DashboardComponent
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
