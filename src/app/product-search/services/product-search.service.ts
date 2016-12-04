@@ -4,14 +4,14 @@ import {Observable} from "rxjs";
 import {Product} from "../../shared/product/product";
 
 @Injectable()
-export class HeroSearchService {
+export class ProductSearchService {
 
   constructor(private http: Http) {
   }
 
   search(term: string): Observable<Product[]> {
     return this.http
-      .get(`app/heroes/?name=${term}`)
+      .get(`app/products/?name=${term}`)
       .map((r: Response) => r.json().data as Product[]);
   }
 }

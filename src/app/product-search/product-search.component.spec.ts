@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import {HeroSearchComponent} from "./hero-search.component";
+import {HeroSearchComponent} from "./product-search.component";
 
 describe('Component: HeroSearch', () => {
   it('should create an instance', () => {

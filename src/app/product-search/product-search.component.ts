@@ -2,21 +2,21 @@ import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
-import {HeroSearchService} from "./services/hero-search.service";
+import {ProductSearchService} from "./services/product-search.service";
 import {Product} from "../shared/product/product";
 
 @Component({
 
-  selector: 'hero-search',
-  templateUrl: 'hero-search.component.html',
-  styleUrls: ['hero-search.component.css'],
-  providers: [HeroSearchService]
+  selector: 'product-search',
+  templateUrl: 'product-search.component.html',
+  styleUrls: ['product-search.component.css'],
+  providers: [ProductSearchService]
 })
 export class HeroSearchComponent implements OnInit {
-  heroes: Observable<Product[]>;
+  products: Observable<Product[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private heroSearchService: HeroSearchService,
+  constructor(private productSearchService: ProductSearchService,
               private router: Router) {
   }
 
@@ -26,12 +26,12 @@ export class HeroSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.heroes = this.searchTerms
+    this.products = this.searchTerms
       .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
       .switchMap(term => term   // switch to new observable each time
         // return the http search observable
-        ? this.heroSearchService.search(term)
+        ? this.productSearchService.search(term)
         // or the observable of empty products if no search term
         : Observable.of<Product[]>([]))
       .catch(error => {
@@ -41,8 +41,8 @@ export class HeroSearchComponent implements OnInit {
       });
   }
 
-  gotoDetail(hero: Product): void {
-    let link = ['/detail', hero.id];
+  gotoDetail(product: Product): void {
+    let link = ['/detail', product.id];
     this.router.navigate(link);
   }
 }
