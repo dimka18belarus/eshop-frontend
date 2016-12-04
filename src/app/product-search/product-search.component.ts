@@ -12,7 +12,7 @@ import {Product} from "../shared/product/product";
   styleUrls: ['product-search.component.css'],
   providers: [ProductSearchService]
 })
-export class HeroSearchComponent implements OnInit {
+export class ProductSearchComponent implements OnInit {
   products: Observable<Product[]>;
   private searchTerms = new Subject<string>();
 

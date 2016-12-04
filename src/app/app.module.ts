@@ -12,7 +12,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HeroesComponent} from "./heroes/products.component";
 import {HeroDetailComponent} from "./hero-detail/hero-detail.component";
 import {ProductService} from "./shared/product.service";
-import {HeroSearchComponent} from "./product-search/product-search.component";
+import {ProductSearchComponent} from "./product-search/product-search.component";
 
 @NgModule({
   imports: [
@@ -27,7 +27,7 @@ import {HeroSearchComponent} from "./product-search/product-search.component";
     DashboardComponent,
     HeroDetailComponent,
     HeroesComponent,
-    HeroSearchComponent,
+    ProductSearchComponent,
     DashboardComponent
   ],
   providers: [ProductService],

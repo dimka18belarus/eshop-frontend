@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
-import {HeroSearchComponent} from "./product-search.component";
+import {ProductSearchComponent} from "./product-search.component";
 
 describe('Component: HeroSearch', () => {
   it('should create an instance', () => {
-    let component = new HeroSearchComponent();
+    let component = new ProductSearchComponent();
     expect(component).toBeTruthy();
   });
 });
