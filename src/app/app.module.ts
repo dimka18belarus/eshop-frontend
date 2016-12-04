@@ -9,7 +9,7 @@ import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 import {InMemoryDataService} from "./shared/in-memory-data.service";
 import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
-import {HeroesComponent} from "./heroes/heroes.component";
+import {HeroesComponent} from "./heroes/products.component";
 import {HeroDetailComponent} from "./hero-detail/hero-detail.component";
 import {HeroService} from "./shared/hero.service";
 import {HeroSearchComponent} from "./hero-search/hero-search.component";
