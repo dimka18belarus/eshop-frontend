@@ -7,26 +7,26 @@ import {ProductService} from "../shared/product.service";
 
 @Component({
 
-  selector: 'my-hero-detail',
-  templateUrl: 'hero-detail.component.html',
-  styleUrls: ['hero-detail.component.css']
+  selector: 'product-detail',
+  templateUrl: 'product-detail.component.html',
+  styleUrls: ['product-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
-  hero: Product;
+export class ProductDetailComponent implements OnInit {
+  product: Product;
 
-  constructor(private heroService: ProductService,
+  constructor(private productService: ProductService,
               private route: ActivatedRoute,
               private location: Location) {
   }
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.heroService.getProduct(+params['id']))
-      .subscribe(hero => this.hero = hero);
+      .switchMap((params: Params) => this.productService.getProduct(+params['id']))
+      .subscribe(product => this.product = product);
   }
 
   save(): void {
-    this.heroService.update(this.hero)
+    this.productService.update(this.product)
       .then(() => this.goBack());
   }
 

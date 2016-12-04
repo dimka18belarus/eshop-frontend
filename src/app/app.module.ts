@@ -10,7 +10,7 @@ import {InMemoryDataService} from "./shared/in-memory-data.service";
 import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HeroesComponent} from "./heroes/products.component";
-import {HeroDetailComponent} from "./hero-detail/hero-detail.component";
+import {ProductDetailComponent} from "./product-detail/product-detail.component";
 import {ProductService} from "./shared/product.service";
 import {ProductSearchComponent} from "./product-search/product-search.component";
 
@@ -25,7 +25,7 @@ import {ProductSearchComponent} from "./product-search/product-search.component"
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroDetailComponent,
+    ProductDetailComponent,
     HeroesComponent,
     ProductSearchComponent,
     DashboardComponent
