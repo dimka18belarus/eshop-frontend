@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
-import {Hero} from "../shared/hero/hero";
-import {HeroService} from "../shared/hero.service";
+import {Product} from "../shared/product/product";
+import {ProductService} from "../shared/product.service";
 
 @Component({
 
@@ -10,16 +10,16 @@ import {HeroService} from "../shared/hero.service";
   styleUrls: ['products.component.css']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
-  selectedHero: Hero;
+  heroes: Product[];
+  selectedHero: Product;
 
-  constructor(private heroService: HeroService,
+  constructor(private heroService: ProductService,
               private router: Router) {
   }
 
   getHeroes(): void {
     this.heroService
-      .getHeroes()
+      .getProducts()
       .then(heroes => this.heroes = heroes);
   }
 
@@ -35,7 +35,7 @@ export class HeroesComponent implements OnInit {
       });
   }
 
-  delete(hero: Hero): void {
+  delete(hero: Product): void {
     this.heroService
       .delete(hero.id)
       .then(() => {
@@ -50,7 +50,7 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
+  onSelect(hero: Product): void {
     this.selectedHero = hero;
   }
 

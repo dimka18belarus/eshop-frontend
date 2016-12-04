@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
 import {HeroSearchService} from "./services/hero-search.service";
-import {Hero} from "../shared/hero/hero";
+import {Product} from "../shared/product/product";
 
 @Component({
 
@@ -13,7 +13,7 @@ import {Hero} from "../shared/hero/hero";
   providers: [HeroSearchService]
 })
 export class HeroSearchComponent implements OnInit {
-  heroes: Observable<Hero[]>;
+  heroes: Observable<Product[]>;
   private searchTerms = new Subject<string>();
 
   constructor(private heroSearchService: HeroSearchService,
@@ -33,15 +33,15 @@ export class HeroSearchComponent implements OnInit {
         // return the http search observable
         ? this.heroSearchService.search(term)
         // or the observable of empty heroes if no search term
-        : Observable.of<Hero[]>([]))
+        : Observable.of<Product[]>([]))
       .catch(error => {
         // TODO: real error handling
         console.log(error);
-        return Observable.of<Hero[]>([]);
+        return Observable.of<Product[]>([]);
       });
   }
 
-  gotoDetail(hero: Hero): void {
+  gotoDetail(hero: Product): void {
     let link = ['/detail', hero.id];
     this.router.navigate(link);
   }

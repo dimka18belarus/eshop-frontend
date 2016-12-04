@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import {addProviders} from "@angular/core/testing";
-import {Hero} from "./hero";
+import {Product} from "./product";
 
-describe('Hero', () => {
+describe('Product', () => {
   it('should create an instance', () => {
-    expect(new Hero()).toBeTruthy();
+    expect(new Product()).toBeTruthy();
   });
 });

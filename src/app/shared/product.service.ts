@@ -1,51 +1,51 @@
 import {Injectable} from "@angular/core";
 import {Headers, Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
-import {Hero} from "./hero/hero";
+import {Product} from "./product/product";
 
 @Injectable()
-export class HeroService {
+export class ProductService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private heroesUrl = 'app/heroes';  // URL to web api
+  private productsUrl = 'app/products';  // URL to web api
 
   constructor(private http: Http) {
   }
 
-  getHeroes(): Promise<Hero[]> {
-    return this.http.get(this.heroesUrl)
+  getProducts(): Promise<Product[]> {
+    return this.http.get(this.productsUrl)
       .toPromise()
-      .then(response => response.json().data as Hero[])
+      .then(response => response.json().data as Product[])
       .catch(this.handleError);
   }
 
-  getHero(id: number): Promise<Hero> {
-    return this.getHeroes()
-      .then(heroes => heroes.find(hero => hero.id === id));
+  getProduct(id: number): Promise<Product> {
+    return this.getProducts()
+      .then(products => products.find(product => product.id === id));
   }
 
   delete(id: number): Promise<void> {
-    const url = `${this.heroesUrl}/${id}`;
+    const url = `${this.productsUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Hero> {
+  create(name: string): Promise<Product> {
     return this.http
-      .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.productsUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);
   }
 
-  update(hero: Hero): Promise<Hero> {
-    const url = `${this.heroesUrl}/${hero.id}`;
+  update(product: Product): Promise<Product> {
+    const url = `${this.productsUrl}/${product.id}`;
     return this.http
-      .put(url, JSON.stringify(hero), {headers: this.headers})
+      .put(url, JSON.stringify(product), {headers: this.headers})
       .toPromise()
-      .then(() => hero)
+      .then(() => product)
       .catch(this.handleError);
   }
 

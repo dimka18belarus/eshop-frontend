@@ -11,7 +11,7 @@ import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HeroesComponent} from "./heroes/products.component";
 import {HeroDetailComponent} from "./hero-detail/hero-detail.component";
-import {HeroService} from "./shared/hero.service";
+import {ProductService} from "./shared/product.service";
 import {HeroSearchComponent} from "./hero-search/hero-search.component";
 
 @NgModule({
@@ -30,7 +30,7 @@ import {HeroSearchComponent} from "./hero-search/hero-search.component";
     HeroSearchComponent,
     DashboardComponent
   ],
-  providers: [HeroService],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
