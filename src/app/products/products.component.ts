@@ -57,4 +57,8 @@ export class ProductsComponent implements OnInit {
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedProduct.id]);
   }
+
+  addToBucket(selectedProduct) {
+    console.log(selectedProduct);
+  }
 }

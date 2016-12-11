@@ -17,7 +17,11 @@
 </ul>
 <div *ngIf="selectedProduct">
   <h2>
-    {{selectedProduct.name | uppercase}} is my hero
+    You choose {{selectedProduct.name | uppercase}}.
   </h2>
+  <h3>
+    Some info: {{selectedProduct.description}}
+  </h3>
   <button (click)="gotoDetail()">View Details</button>
+  <button (click)="addToBucket(selectedProduct)">Add to bucket</button>
 </div>
