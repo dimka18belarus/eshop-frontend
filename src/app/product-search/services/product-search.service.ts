@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
-import {Product} from "../../shared/product/product";
+import {Product} from "../../shared/shop/product/product";
 
 @Injectable()
 export class ProductSearchService {

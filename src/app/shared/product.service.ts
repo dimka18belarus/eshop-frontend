@@ -1,21 +1,22 @@
 import {Injectable} from "@angular/core";
 import {Headers, Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
-import {Product} from "./product/product";
+import {Product} from "./shop/product/product";
+import {ServerSettingsService} from "./server-settings/server-settings.service";
 
 @Injectable()
 export class ProductService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private productsUrl = 'app/products';  // URL to web api
+  private productsUrl = '/api/products';  // URL to web api
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private server: ServerSettingsService) {
   }
 
   getProducts(): Promise<Product[]> {
-    return this.http.get(this.productsUrl)
+    return this.http.get(this.server.getServerUrl() + this.productsUrl)
       .toPromise()
-      .then(response => response.json().data as Product[])
+      .then(response => response.json().content as Product[])
       .catch(this.handleError);
   }
 

@@ -2,7 +2,7 @@ import "rxjs/add/operator/switchMap";
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Location} from "@angular/common";
-import {Product} from "../shared/product/product";
+import {Product} from "../shared/shop/product/product";
 import {ProductService} from "../shared/product.service";
 
 @Component({
