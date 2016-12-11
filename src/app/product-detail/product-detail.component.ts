@@ -26,7 +26,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.productService.update(this.product)
+    this.productService.updateProduct(this.product)
       .then(() => this.goBack());
   }
 

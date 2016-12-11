@@ -2,7 +2,7 @@
 import {ProductDetailComponent} from "./product-detail.component";
 
 describe('Component: HeroDetail', () => {
-  it('should create an instance', () => {
+  it('should createProduct an instance', () => {
     let component = new ProductDetailComponent();
     expect(component).toBeTruthy();
   });

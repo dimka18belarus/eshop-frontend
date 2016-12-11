@@ -28,7 +28,7 @@ export class ProductsComponent implements OnInit {
     if (!name) {
       return;
     }
-    this.productService.create(name)
+    this.productService.createProduct(name)
       .then(product => {
         this.products.push(product);
         this.selectedProduct = null;
@@ -37,7 +37,7 @@ export class ProductsComponent implements OnInit {
 
   delete(product: Product): void {
     this.productService
-      .delete(product.id)
+      .deleteProduct(product.id)
       .then(() => {
         this.products = this.products.filter(h => h !== product);
         if (this.selectedProduct === product) {
