@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Headers, Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
-import {Product} from "./shop/product/product";
-import {ServerSettingsService} from "./server-settings/server-settings.service";
+import {Product} from "../product";
+import {ServerSettingsService} from "../../shared/server-settings/server-settings.service";
 
 @Injectable()
 export class ProductService {

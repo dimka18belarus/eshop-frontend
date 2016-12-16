@@ -15,5 +15,12 @@
     <label>price: </label>
     <input [(ngModel)]="product.price" placeholder="price"/>
   </div>
+
+  <div>
+    <select [(ng-model)]="product.category" required>
+      <option [[ng-repeat]]="let category of categories" value={{category.id}}>{{category.name}}</option>
+    </select>
+  </div>
+
   <button (click)="goBack()">Back</button>
 </div>

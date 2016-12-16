@@ -2,8 +2,10 @@ import "rxjs/add/operator/switchMap";
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Location} from "@angular/common";
-import {Product} from "../shared/shop/product/product";
-import {ProductService} from "../shared/product.service";
+import {Product} from "../product";
+import {ProductService} from "../services/product.service";
+import {Category} from "../../category/category";
+import {CategoryService} from "../../category/services/category.service";
 
 @Component({
 
@@ -13,8 +15,10 @@ import {ProductService} from "../shared/product.service";
 })
 export class ProductDetailComponent implements OnInit {
   product: Product;
+  categories: Array<Category>;
 
   constructor(private productService: ProductService,
+              private categoryService: CategoryService,
               private route: ActivatedRoute,
               private location: Location) {
   }
@@ -23,6 +27,8 @@ export class ProductDetailComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.productService.getProduct(+params['id']))
       .subscribe(product => this.product = product);
+
+    this.getCategories();
   }
 
   save(): void {
@@ -32,5 +38,10 @@ export class ProductDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  getCategories() {
+    this.categoryService.getCategories()
+      .then(categories => this.categories = categories);
   }
 }

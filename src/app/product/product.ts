@@ -1,6 +1,6 @@
-import {Tag} from "../tag/tag";
-import {Stock} from "../stock/stock";
-import {Photo} from "../photo";
+import {Tag} from "../shared/shop/tag/tag";
+import {Stock} from "../shared/shop/stock/stock";
+import {Photo} from "../shared/shop/photo";
 export class Product {
   id: number;
   name: string;

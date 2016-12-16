@@ -7,10 +7,10 @@ import {EshopClientRoutingModule} from "./app-routing.module";
 // Imports for loading & configuring the in-memory web api
 import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
-import {ProductsComponent} from "./products/products.component";
-import {ProductDetailComponent} from "./product-detail/product-detail.component";
-import {ProductService} from "./shared/product.service";
-import {ProductSearchComponent} from "./product-search/product-search.component";
+import {ProductsComponent} from "./product/products/products.component";
+import {ProductDetailComponent} from "./product/product-detail/product-detail.component";
+import {ProductService} from "./product/services/product.service";
+import {ProductSearchComponent} from "./product/product-search/product-search.component";
 import {ServerSettingsService} from "./shared/server-settings/server-settings.service";
 
 @NgModule({
